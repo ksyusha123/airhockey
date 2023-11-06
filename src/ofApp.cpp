@@ -33,8 +33,6 @@ void ofApp::update(){
 
     colorImg.setFromPixels(vidGrabber.getPixels());
     bool newFrame = vidGrabber.isFrameNew();
-    // int sourceWidth = vidGrabber.getWidth();
-	// int sourceHeight = vidGrabber.getHeight();
 
     int scaledWidth = initWidth / cvDownScale;
 	int scaledHeight = initHeight / cvDownScale;

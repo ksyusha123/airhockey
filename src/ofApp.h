@@ -14,7 +14,7 @@ class Puck {
         }
 
         bool move(cv::Point2f flow, int sourceWidth, int sourceHeight) {
-            velocity += flow;
+			velocity += 2 * flow;
             pos += velocity;
             pos.x = ofClamp(pos.x, 0, sourceWidth - 1);
             pos.y = ofClamp(pos.y, 0, sourceHeight - 1);
@@ -25,8 +25,8 @@ class Puck {
 				hit = true;
             }
 
-            velocity.x += 0.05 * glm::sign(velocity.x);
-            velocity.y += 0.05 * glm::sign(velocity.y);
+            velocity.x *= 0.975;
+            velocity.y *= 0.975;
 
 			return hit;
         }
